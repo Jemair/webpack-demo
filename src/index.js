@@ -1,6 +1,3 @@
 import s from './index.styl'
 
-console.log(s)
-
-document.write('Hello webpack')
-console.log('Hello webpack')
+document.write(`<div class=${s.div}>a111afsab</div>`)
