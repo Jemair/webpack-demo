@@ -1,4 +1,5 @@
 const path = require('path')
+const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
@@ -46,6 +47,13 @@ module.exports = {
       // both options are optional
       filename: '[name].css',
       chunkFilename: '[id].css',
-    })
+    }),
+
+    new webpack.NamedModulesPlugin(), // 用于启动 HMR 时可以显示模块的相对路径
+    new webpack.HotModuleReplacementPlugin(), // Hot Module Replacement 的插件...
   ],
+
+  devServer: {
+    hot: true,
+  }
 }

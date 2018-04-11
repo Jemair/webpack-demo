@@ -1,3 +1,5 @@
-import s from './index.styl'
+import './main'
 
-document.write(`<div class=${s.div}>a111afsab</div>`)
+if (module.hot) {
+  module.hot.accept('./main.js')
+}
