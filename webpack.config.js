@@ -55,5 +55,7 @@ module.exports = {
 
   devServer: {
     hot: true,
+    noInfo: true,
+    quiet: true,
   }
 }
