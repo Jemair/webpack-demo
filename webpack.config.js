@@ -34,6 +34,14 @@ module.exports = {
         }, {
           loader: 'stylus-loader',
         }],
+    }, {
+      test: /\.(png|jpg|gif)$/,
+      use: [{
+        loader: 'url-loader',
+        options: {
+          limit: 8192,
+        }
+      }]
     }],
   },
 
@@ -52,6 +60,12 @@ module.exports = {
     new webpack.NamedModulesPlugin(), // 用于启动 HMR 时可以显示模块的相对路径
     new webpack.HotModuleReplacementPlugin(), // Hot Module Replacement 的插件...
   ],
+
+  optimization: {
+    splitChunks: {
+      chunks: "all", // 所有的 chunks 代码公共的部分分离出来成为一个单独的文件
+    },
+  },
 
   devServer: {
     hot: true,
