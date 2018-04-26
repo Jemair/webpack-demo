@@ -57,5 +57,6 @@ module.exports = {
     hot: true,
     noInfo: true,
     quiet: true,
+    open: true,
   }
 }
