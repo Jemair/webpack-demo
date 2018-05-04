@@ -1,4 +1,4 @@
 {
-  "presets": [["env", {"modules": false}]],
+  "presets": [["env", {"modules": false, "loose": true}]],
   "plugins": ["transform-runtime"]
 }
